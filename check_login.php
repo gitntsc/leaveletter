@@ -86,18 +86,32 @@ date_default_timezone_set("Asia/Bangkok");
 			$dateresult2 = floor($dateresult);
 			$dateresult2;
 			if($dateresult2>120 && $dateresult2<365){
-				if($objResult['kind_work']=="office"){
+				if($objResult['kind_work']=="office" ){
+				  if($objResult['pr1']='1'){
 				$_POST['exsicktime'] = "918000";
 				$_POST['exbusiness_time'] = "91800";
-				$strSQL25 = "UPDATE member SET exsicktime ='".$_POST['exsicktime']."',exbusiness_time = '".$_POST['exbusiness_time']."'";
+				$strSQL25 = "UPDATE member SET exsicktime ='".$_POST['exsicktime']."',exbusiness_time = '".$_POST['exbusiness_time']."' where username = '".$_SESSION['username']."'";
 				$objQuery25 = mysqli_query($objCon,$strSQL25);
-			}else {
+				
+				
+				  $strSQL26 = "UPDATE member SET pr1 = '0' where username = '".$_SESSION['username']."'";
+				  $objQuery = mysqli_query($objCon,$strSQL26);
+				
+			            }
+			            }else{
+				if($objResult['pr1']=='1'){
 				$_POST['exsicktime'] = "864000";
 				$_POST['exbusiness_time'] = "86400";
-				$strSQL25 = "UPDATE member SET exsicktime ='".$_POST['exsicktime']."',exbusiness_time = '".$_POST['exbusiness_time']."'";
+				$strSQL25 = "UPDATE member SET exsicktime ='".$_POST['exsicktime']."',exbusiness_time = '".$_POST['exbusiness_time']."' where username = '".$_SESSION['username']."'";
 				$objQuery25 = mysqli_query($objCon,$strSQL25);
-			}
-
+				}
+				
+				  $strSQL26 = "UPDATE member SET pr1 = '0' where username = '".$_SESSION['username']."'";
+				  $objQuery = mysqli_query($objCon,$strSQL26);
+				
+			            }
+				
+			            
 			}
 				$time2 = date('Y');
 			$time2;

@@ -88,6 +88,7 @@
   $vacation_time = "0";
   $_POST['vacation_time'] = $vacation_time;
 }
+$_POST['pr1'] = 1;
 $_POST['ct0'] = 1;
 $_POST['ct1'] = 1;
 $_POST['ct2'] = 1;
@@ -112,7 +113,7 @@ $_POST['ct3'] = 1;
 	'".$_POST["frontname"]."','".$_POST["nameth"]."','".$_POST["surnameth"]."','".$_POST["nameen"]."','".$_POST["surnameen"]."','".$_POST["fname"]."','".$_POST["level_job"]."','".$_POST["grade"]."'
   ,'".$_POST["birthday"]."','".$_POST["sex"]."','".$_POST["nationnality"]."','".$_POST["section"]."','".$_POST["people_member"]."','".$_POST["kind_work"]."','".$_POST["start_work"]."','".$_POST["level"]."',
 '".$_POST["company"]."','".$_POST["leader1"]."','".$_POST["leader2"]."','".$_POST["email"]."','".$_POST["status"]."','".$_POST["address"]."','".$_POST["exbusiness_time"]."','".$_POST["exvacation_time"]."','".$_POST["exsicktime"]."'
- ,'".$_POST["vacation_time"]."','".$_POST["sicktime"]."','".$_POST["business_time"]."','".$_POST['ct0']."','".$_POST['ct1']."','".$_POST['ct2']."','".$_POST['ct3']."')";
+ ,'".$_POST["vacation_time"]."','".$_POST["sicktime"]."','".$_POST["business_time"]."','".$_POST['pr1']."','".$_POST['ct0']."','".$_POST['ct1']."','".$_POST['ct2']."','".$_POST['ct3']."')";
 		$objQuery = mysqli_query($objCon,$strSQL);
 
 		date_default_timezone_set("Asia/Bangkok");
