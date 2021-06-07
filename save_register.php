@@ -109,7 +109,7 @@ $_POST['ct3'] = 1;
 	{
 
 	 echo  $strSQL = "INSERT INTO member (user_id,frontname,nameth,surnameth,nameen,surnameen,fname,level_job,grade,birthday,sex,nationnality,section,
-      people_member,kind_work,start_work,level,company,leader1,leader2,email,status,address,exbusiness_time,exvacation_time,exsicktime,vacation_time,sicktime,business_time,ct0,ct1,ct2,ct3) VALUES ('".$_POST["user_id"]."',
+      people_member,kind_work,start_work,level,company,leader1,leader2,email,status,address,exbusiness_time,exvacation_time,exsicktime,vacation_time,sicktime,business_time,pr1,ct0,ct1,ct2,ct3) VALUES ('".$_POST["user_id"]."',
 	'".$_POST["frontname"]."','".$_POST["nameth"]."','".$_POST["surnameth"]."','".$_POST["nameen"]."','".$_POST["surnameen"]."','".$_POST["fname"]."','".$_POST["level_job"]."','".$_POST["grade"]."'
   ,'".$_POST["birthday"]."','".$_POST["sex"]."','".$_POST["nationnality"]."','".$_POST["section"]."','".$_POST["people_member"]."','".$_POST["kind_work"]."','".$_POST["start_work"]."','".$_POST["level"]."',
 '".$_POST["company"]."','".$_POST["leader1"]."','".$_POST["leader2"]."','".$_POST["email"]."','".$_POST["status"]."','".$_POST["address"]."','".$_POST["exbusiness_time"]."','".$_POST["exvacation_time"]."','".$_POST["exsicktime"]."'
