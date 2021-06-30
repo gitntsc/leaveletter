@@ -166,7 +166,7 @@ if(isset($_POST["ddlselect"]))
                     <?php
                   }else{
                     include "connect.php";
-               $strSQL2 = "SELECT * FROM member where username LIKE '%".$_POST["ddlselect"]."%'";
+                 $strSQL2 = "SELECT * FROM member where username LIKE '%".$_POST["ddlselect"]."%'";
                     $objQuery2 = mysqli_query($objCon,$strSQL2);
 
 

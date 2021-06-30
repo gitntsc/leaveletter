@@ -1,10 +1,11 @@
 <?php
+session_start();
 if($_SESSION['user_id'] == "")
 {
   echo "Please Login!";
   header("location:index.php");
 }
-session_start();
+
 
 
  ?>
@@ -279,6 +280,12 @@ session_start();
                                                             </select>
 
                                                       </div>
+                                                      <div class="form-group">
+                                                            <input type="text" class="form-control" value="<?php echo $objResult2['leader1'];?>" name="leader1" id="leader1" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" value="<?php echo $objResult2['leader2'];?>" name="leader2" id="leader2" />
+                                                        </div>
 
                                                 </div>
                                                 <div class="col-md-12">

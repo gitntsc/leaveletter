@@ -7,29 +7,15 @@
 session_start();
 
 include 'connect.php';
-$strSQL = "UPDATE member SET ";
-$strSQL .="username = '".$_POST["username"]."' ";
-$strSQL .=",password= '".$_POST["password"]."' ";
-$strSQL .=",sex= '".$_POST["gender"]."' ";
-$strSQL .=",frontname = '".$_POST["gender2"]."' ";
-$strSQL .=",start_work = '".$_POST["start_work"]."' ";
-$strSQL .=",nameen = '".$_POST["nameen"]."' ";
-$strSQL .=",nameth = '".$_POST["nameth"]."' ";
-$strSQL .=",fname = '".$_POST["fname"]."' ";
-$strSQL .=",grade = '".$_POST["grade"]."' ";
-$strSQL .=",nationnality = '".$_POST["nationnality"]."' ";
-$strSQL .=",section = '".$_POST["section"]."' ";
-$strSQL .=",status = '".$_POST["status"]."' ";
-$strSQL .=",surnameen = '".$_POST["surnameen"]."' ";
-$strSQL .=",surnameth = '".$_POST["surnameth"]."' ";
-$strSQL .=",kind_work = '".$_POST["kind_work"]."' ";
-$strSQL .=",company = '".$_POST["company"]."' ";
-$strSQL .=",email = '".$_POST["email"]."' ";
-$strSQL .=",address = '".$_POST["address"]."' ";
-$strSQL .="WHERE user_id = '".$_GET["user_id"]."' ";
+ $strSQL = "UPDATE member SET sex = '".$_POST['gender']."',frontname = '".$_POST['gender2']."',
+start_work = '".$_POST["start_work"]."',nameen = '".$_POST["nameen"]."' ,nameth = '".$_POST["nameth"]."', fname = '".$_POST["fname"]."' ,grade = '".$_POST["grade"]."' ,
+nationnality = '".$_POST["nationnality"]."',section = '".$_POST["section"]."' ,leader1 = '".$_POST["leader1"]."',leader2 = '".$_POST["leader2"]."' ,status = '".$_POST["status"]."' ,
+surnameen = '".$_POST["surnameen"]."',surnameth = '".$_POST["surnameth"]."',kind_work = '".$_POST["kind_work"]."',company = '".$_POST["company"]."' ,email = '".$_POST["email"]."',
+address = '".$_POST["address"]."' where user_id = '".$_GET["user_id"]."'";
+$objQuery = mysqli_query($objCon,$strSQL);
 
-$objQuery2 = mysqli_query($objCon,$strSQL);
-if($objQuery2)
+
+if($objQuery)
 {
 	?>
 
@@ -74,9 +60,6 @@ if($objQuery2)
 	echo "not success";
 }
 }
-
-
-
 
 
 mysqli_close($objCon);
