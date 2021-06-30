@@ -1,3 +1,14 @@
+<?php
+session_start();
+if($_SESSION['user_id'] == "")
+{
+  echo "Please Login!";
+  header("location:index.php");
+}
+
+error_reporting(0);
+
+?>
 <html>
 <head>
 	<link rel="stylesheet" href="fullcalendar/fullcalendar.min.css"/>
@@ -13,7 +24,15 @@
 />
 
 <?php
+if($_SESSION['level']=='hr'){
 include 'calendar2.php';
+}elseif($_SESSION['level']=='admin'){
+    include 'calendar2.php';
+}elseif($_SESSION['level']=='leader'){
+include 'calendar3.php';
+}else{
+    include 'calendar4.php';
+}
  ?>
 
 </html>

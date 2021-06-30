@@ -84,6 +84,7 @@ if($_SESSION['username']=='Panaree')
          </div>
        </div>
      </li>
+  
 
 <?php
 }else{
@@ -122,6 +123,11 @@ if($_SESSION['username']=='Panaree')
       <a class="nav-link" href="leader_page.php">
         <i class="fas fa-fw fa-table"></i>
         <span>รายงานขอลา</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="calendar.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>ปฏิทิน</span></a>
     </li>
 
     <!-- Divider -->

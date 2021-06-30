@@ -65,8 +65,10 @@
         <div class="bg-white py-2 collapse-inner rounded">
 
           <a class="collapse-item" href="register.php">ลงทะเบียน</a>
+          <a class="collapse-item" href="holiday.php">ลงทะเบียนวันหยุด</a>
 
         </div>
+        
       </div>
     </li>
 
@@ -86,6 +88,7 @@
           <div class="collapse-divider">ข้อมูลทั่วไป</div>
           <a class="collapse-item" href="edit_page_u.php">ดูข้อมูลการลาของตัวเอง</a>
           <a class="collapse-item" href="all_approve.php">ดูข้อมูลการลาทั้งหมด</a>
+          <a class="collapse-item" href="list_holiday.php">ดู/แก้ไขวันหยุด</a>
           <a class="collapse-item" href="report_year_leader.php">ดูข้อมูลแบบปี</a>
           <a class="collapse-item" href="member.php">ข้อมูลสมาชิก</a>
 

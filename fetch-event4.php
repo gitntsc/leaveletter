@@ -3,7 +3,7 @@ session_start();
     require_once "db.php";
 
     $json = array();
-    $sqlQuery = "SELECT * FROM leave_tbl where status !='cancle'";
+    $sqlQuery = "SELECT * FROM leave_tbl where status !='cancle' and username = '".$_SESSION['username']."'";
     mysqli_set_charset($conn, "utf8");
 
     $result = mysqli_query($conn, $sqlQuery);

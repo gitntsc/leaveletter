@@ -63,9 +63,9 @@ if(isset($_POST["lastdate"]))
          <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-6">
+            <div class="col-xl-12 col-lg-12">
               <div class="card shadow mb-12">
-                <div class="card-header py-3">
+                <div class="card-header py-12">
                 <center>  <h6 class="m-0 font-weight-bold text-primary">ใบคำขอการลา</h6></center>
                 </div>
                 <!-- Card Header - Dropdown -->
@@ -361,6 +361,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -410,6 +411,8 @@ if(isset($_POST["lastdate"]))
           <td><?php echo $objResult2['username'];?></td>
 
         <td><?php echo $objResult2['reason'];?></td>
+
+        <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
         <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -462,6 +465,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -510,6 +514,8 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -561,7 +567,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
-
+<th>วันที่ลงข้อมูล</th>
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
           <th>วันสุดท้ายที่ลา</th>
@@ -610,6 +616,7 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -661,6 +668,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -710,6 +718,8 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -762,6 +772,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันเพิ่มข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -810,6 +821,8 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -861,6 +874,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -909,6 +923,8 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -962,6 +978,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -1010,6 +1027,8 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
@@ -1061,6 +1080,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -1112,6 +1132,8 @@ if(isset($_POST["lastdate"]))
 
       <td><?php echo $objResult2['reason'];?></td>
 
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
+
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
         <td><?php echo $objResult2['lastdate'];?><br><?php echo $objResult2['lasttime'];?></td>
@@ -1162,6 +1184,7 @@ if(isset($_POST["lastdate"]))
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=username&order=<?php echo $strNewOrder;?>">ผู้ลา</a></th>
 
 <th>เหตุผล</th>
+<th>วันที่ลงข้อมูล</th>
 
 <th><a href="<?php echo $_SERVER["PHP_SELF"];?>?sort=strdate&order=<?php echo $strNewOrder;?>">วันเริ่มลา</th>
 
@@ -1211,6 +1234,7 @@ if(isset($_POST["lastdate"]))
         <td><?php echo $objResult2['username'];?></td>
 
       <td><?php echo $objResult2['reason'];?></td>
+      <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['crt_time'];?></td>
 
       <td><?php echo $objResult2['strdate'];?><br><?php echo $objResult2['strtime'];?></td>
 
