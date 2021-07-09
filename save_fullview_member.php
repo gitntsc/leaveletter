@@ -34,7 +34,7 @@ if($objQuery)
 
 	<script>
 	alert('บันทึกสำเร็จ');
-	location.href='hr_page.php';
+	location.href='member.php';
 	</script>
 	<?php
 

@@ -507,8 +507,8 @@ if($_SESSION['user_id'] == "")
                                                <div class="form-group">
                                                    <select class="form-control" name = status id=status>
                                                        <option value="<?php echo $objResult2['status'];?>"  selected ><?php echo $objResult2['status'];?></option>
-                                                       <option value="yes">ทำงาน</option>
-                                                       <option value="no">ลาออก</option>
+                                                       <option value="ทำงาน">ทำงาน</option>
+                                                       <option value="ลาออก">ลาออก</option>
 
                                                    </select>
 
