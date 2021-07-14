@@ -80,6 +80,11 @@
         <i class="fas fa-fw fa-chart-area"></i>
         <span>รายงานขอลา</span></a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="calendar.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>ปฏิทิน</span></a>
+    </li>
 
 
 

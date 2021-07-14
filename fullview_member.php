@@ -1,10 +1,11 @@
 <?php
+session_start();
 if($_SESSION['user_id'] == "")
 {
   echo "Please Login!";
   header("location:index.php");
 }
-session_start();
+
 
 
  ?>
@@ -279,6 +280,12 @@ session_start();
                                                             </select>
 
                                                       </div>
+                                                      <div class="form-group">
+                                                            <input type="text" class="form-control" value="<?php echo $objResult2['leader1'];?>" name="leader1" id="leader1" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" value="<?php echo $objResult2['leader2'];?>" name="leader2" id="leader2" />
+                                                        </div>
 
                                                 </div>
                                                 <div class="col-md-12">
@@ -500,8 +507,8 @@ session_start();
                                                <div class="form-group">
                                                    <select class="form-control" name = status id=status>
                                                        <option value="<?php echo $objResult2['status'];?>"  selected ><?php echo $objResult2['status'];?></option>
-                                                       <option value="yes">ทำงาน</option>
-                                                       <option value="no">ลาออก</option>
+                                                       <option value="ทำงาน">ทำงาน</option>
+                                                       <option value="ลาออก">ลาออก</option>
 
                                                    </select>
 

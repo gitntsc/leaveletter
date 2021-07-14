@@ -4,7 +4,7 @@
 $(document).ready(function () {
     var calendar = $('#calendar').fullCalendar({
         //editable: true,
-        events: "fetch-event2.php",
+        events: "fetch-event3.php",
         displayEventTime: false,
         eventClick: function(calEvent) {
     			/*console.log(calEvent.start.format('DD/MM/YYYY'));

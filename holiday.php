@@ -1,13 +1,13 @@
 <?php
 session_start();
-header("Cache-Control: max-age=0; no-cache; no-store; must-revalidate");
-$ddlselect = null;
-ini_set('display_errors', 0);
-error_reporting(~0);
-if(isset($_POST["ddlselect"]))
+if($_SESSION['user_id'] == "")
 {
-  $ddlselect = $_POST["ddlselect"];
+  echo "Please Login!";
+  header("location:index.php");
 }
+
+error_reporting(0);
+
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +30,12 @@ if(isset($_POST["ddlselect"]))
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles2.css">
-  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 </head>
 
 <body id="page-top">
 
   <!-- Page Wrapper -->
-
   <?php
   if($_SESSION['level'] == "admin"){
     include "main_admin.php";
@@ -50,218 +47,53 @@ if(isset($_POST["ddlselect"]))
     include "main_user.php";
   }
 ?>
+          <!-- Content Row -->
+
           <div class="row">
 
             <!-- Area Chart -->
             <div class="col-xl-12 col-lg-12">
               <div class="card shadow mb-12">
                 <div class="card-header py-3">
-                <center>  <h6 class="m-0 font-weight-bold text-primary">รายชื่อสมาชิกทั้งหมด</h6></center>
+                <center>  <h6 class="m-0 font-weight-bold text-primary">บันทึกวันหยุดบริษัท</h6></center>
                 </div>
                 <!-- Card Header - Dropdown -->
                 <div class="card shadow mb-12">
                   <div class="card-header py-3">
                     <div class="col-md-12">
-                      <div class="container">
-                        <form name="frmSearch" method="post" action="<?=$_SERVER['SCRIPT_NAME'];?>">
-                        <div class="search_wrap search_wrap_3">
-              			<div class="search_box">
-              				<input type="text" class="input" name="ddlselect" id="ddlselect" placeholder="ค้นหารายชื่อ">
-              				<div class="btn btn_common">
-              					<i class="fas fa-search"></i>
-                      </form>
-              				</div>
-              			</div>
-              		</div>
-
-
-
-                   <?php
-                   if($_POST['ddlselect']==""){
-                      include "connect.php";
-                   $strSQL2 = "SELECT * FROM member";
-                      $objQuery2 = mysqli_query($objCon,$strSQL2);
-
-
-                       ?>
-
-                       <div class="table-responsive">
-
-                       <table class="table table-striped table-hover table-bordered">
-                      <thead>
-
-                        <tr>
-
-                              <th style="text-align:center">ID</th>
-
-                              <th style="text-align:center">Username</th>
-
-                            
-
-                              <th style="text-align:center">บริษัท</th>
-
-                              <th style="text-align:center">ฝ่าย</th>
-
-                              <th style="text-align:center">ระดับ</th>
-
-                              <th style="text-align:center">ประเภทการทำงาน</th>
-
-                              <th style="text-align:center">แก้ไข</th>
-
-
-
-
-
-
-
-                        </tr>
-
-                      </thead>
-                      <?php
-                      while ($objResult2= mysqli_fetch_assoc($objQuery2))
-                    	{
-                        ?>
-
-
-                      <tbody>
-
-                        <tr>
-
-                          <td style="text-align:center"><?php echo $objResult2['user_id'];?></td>
-
-                          <td style="text-align:center"><?php echo $objResult2['username'];?></td>
-
-
-
-                          <td style="text-align:center"><?php echo $objResult2['company'];?></td>
-
-                          <td style="text-align:center"><?php echo $objResult2['section'];?></td>
-
-                          <td style="text-align:center"><?php echo $objResult2['level'];?></td>
-
-                          <td style="text-align:center"><?php echo $objResult2['kind_work'];?></td>
-
-
-
-                        <td align="center"><a href="fullview_member.php?user_id=<?php echo $objResult2["user_id"];?>">Edit</a></td>
-
-
-
-
-
-
-                         </tr>
-                      <?php
-                       }
-                         ?>
-
-
-
-
-
-
-                      </tbody>
-
-                    </table>
-                    <?php
-                  }else{
-                    include "connect.php";
-                 $strSQL2 = "SELECT * FROM member where username LIKE '%".$_POST["ddlselect"]."%'";
-                    $objQuery2 = mysqli_query($objCon,$strSQL2);
-
-
-                     ?>
-
-                     <div class="table-responsive">
-
-                     <table class="table table-striped table-hover table-bordered">
-                    <thead>
-
-                      <tr>
-
-                            <th style="text-align:center">ID</th>
-
-                            <th style="text-align:center">Username</th>
-
-                            <th style="text-align:center">Password</th>
-
-                            <th style="text-align:center">บริษัท</th>
-
-                            <th style="text-align:center">ฝ่าย</th>
-
-                            <th style="text-align:center">ระดับ</th>
-
-                            <th style="text-align:center">ประเภทการทำงาน</th>
-
-                            <th style="text-align:center">แก้ไข</th>
-
-
-
-
-
-
-
-                      </tr>
-
-                    </thead>
-                    <?php
-                    while ($objResult2= mysqli_fetch_assoc($objQuery2))
-                    {
-                      ?>
-
-
-                    <tbody>
-
-                      <tr>
-
-                        <td style="text-align:center"><?php echo $objResult2['user_id'];?></td>
-
-                        <td style="text-align:center"><?php echo $objResult2['username'];?></td>
-
-                        <td style="text-align:center"><?php echo $objResult2['password'];?></td>
-
-                        <td style="text-align:center"><?php echo $objResult2['company'];?></td>
-
-                        <td style="text-align:center"><?php echo $objResult2['section'];?></td>
-
-                        <td style="text-align:center"><?php echo $objResult2['level'];?></td>
-
-                        <td style="text-align:center"><?php echo $objResult2['kind_work'];?></td>
-
-
-
-                      <td align="center"><a href="fullview_member.php?user_id=<?php echo $objResult2["user_id"];?>">Edit</a></td>
-
-
-
-
-
-
-                       </tr>
-                    <?php
-                     }
-                       ?>
-
-
-
-
-
-
-                    </tbody>
-
-                  </table>
-                  <?php
-
-
-                }
-
-
-                    ?>
-
+                     
+                    <form name="form1" method="post" action="save_holiday.php">
+            
+
+
+                        <div class="form-group">
+                        <lable>ชื่อวันหยุด</lable>
+                        <input type="text" class="form-control" placeholder="ชื่อวันหยุด" id="holi_name" name="holi_name">
+                        </div>
+                        <label>วันที่เริ่ม</label><br>
+
+                        <div class="form-group">
+                          <input class="form-control" type="date" name="holi_str" id="holi_str"><br>
 
                         </div>
+                    
+                      <label>วันสุดท้าย</label><br>
+                      <div class="form-group">
+                        <input class="form-control" type="date" name="holi_end" id="holi_end"><br>
+                        </div>
+                        <label>หมายเหตุ</label><br>
+                        <div class="form-group">
+                        <input class="form-control" type="text" name="notice" id="notice"><br>
+                        </div>
+                   
+
+
+
+
+                  <center>  <button type="submit" class="btn btn-success">submit</button></Center>
                     </div>
                 <!-- Card Body -->
+              </form>
                 <div class="card-body">
 
                 </div>
@@ -275,7 +107,6 @@ if(isset($_POST["ddlselect"]))
 
           </div>
           </br></br>
-
           <!-- Content Row -->
           <div class="row">
 
@@ -407,7 +238,7 @@ if(isset($_POST["ddlselect"]))
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true">?</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
