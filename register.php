@@ -41,6 +41,8 @@ session_start();
     include "main_user.php";
   }
 ?>
+<?php
+?>
           <!-- Page Heading -->
 
 
