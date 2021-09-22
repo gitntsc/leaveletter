@@ -62,9 +62,9 @@
   $_POST['business_time'] = $business_time;
 
 
-  $exsick_time = "0";
+  $exsick_time = "918000";
   $_POST['exsicktime'] = $exsick_time;
-  $sick_time = "0";
+  $sick_time = "918000";
   $_POST['sicktime'] = $sick_time;
 
   $exvacation_time = "0";
@@ -78,9 +78,9 @@
   $_POST['business_time'] = $business_time;
 
 
-  $exsick_time = "0";
+  $exsick_time = "864000";
   $_POST['exsicktime'] = $exsick_time;
-  $sick_time = "0";
+  $sick_time = "864000";
   $_POST['sicktime'] = $sick_time;
 
   $exvacation_time = "0";

@@ -193,6 +193,9 @@ session_start();
                                                                 <option value="หัวหน้า">หัวหน้า</option>
                                                                 <option value="รองผู้จัดการ">รองผู้จัดการ</option>
                                                                 <option value="ผู้จัดการ">ผู้จัดการ</option>
+                                                                <option value="CFO">CFO</option>
+                                                                <option value="COO">COO</option>
+                                                                <option value="CMO">CMO</option>
 
                                                             </select>
                                                         </div>

@@ -52,7 +52,7 @@ date_default_timezone_set("Asia/Bangkok");
 
 
 			session_write_close();
-
+ 
 			if($objResult["level"] == "admin"){
 				header("location:admin_page.php");
 			}elseif($objResult["level"] == "leader"){
@@ -64,8 +64,8 @@ date_default_timezone_set("Asia/Bangkok");
 
 			}else{
 				header("location:index.php");
-			}
-
+			} 
+ 
 
 			function DateDiff($strDate1,$strDate2)
 			{
@@ -84,8 +84,17 @@ date_default_timezone_set("Asia/Bangkok");
 			$str_time = $objResult['start_work'];
 			$dateresult = DateDiff("$str_time","$today");
 			$dateresult2 = floor($dateresult);
-			$dateresult2;
-			if($dateresult2>120 && $dateresult2<365){
+			echo $dateresult2;
+			if($dateresult2<365){
+				
+			echo	 $strSQL70 = "UPDATE member SET exvacation_time = 0,vacation_time = 0 where username = '".$_SESSION['username']."'";
+				$objQuery70 = mysqli_query($objCon,$strSQL70);
+			}
+			if($dateresult2<120){
+				$strSQL71 = "UPDATE member SET exbusiness_time = 0 , business_time = 0 where username = '".$_SESSION['username']."'";
+				$objQuery71 = mysqli_query($objCon,$strSQL71);
+			}
+			 if($dateresult2>120 && $dateresult2<365){
 				if($objResult['kind_work']=="office" ){
 				  if($objResult['pr1']='1'){
 				$_POST['exsicktime'] = "918000";
@@ -240,13 +249,13 @@ date_default_timezone_set("Asia/Bangkok");
 														$last_time = $timeresult + 365;
 														$last_time2 = floor($last_time);
 														$timeresult;
-													//	echo "$timediff > 365  and $timediff<$last_time";
+													//	 "$timediff > 365  and $timediff<$last_time";
 												if($timediff>365 && $timediff<$last_time){
 													if($objResult10['kind_work']=="office"){
 														if($objResult10['ct0']=="1"){
 															if($timeresult>1 && $timeresult<61){
 																$_POST['exvacation_time'] = (1*60*60*8.5);
-														echo		$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 															}elseif($timeresult>61 && $timeresult<131){
 																$_POST['exvacation_time'] = (2*60*60*8.5);
@@ -254,25 +263,25 @@ date_default_timezone_set("Asia/Bangkok");
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 															}elseif($timeresult>131 && $timeresult<181){
 																$_POST['exvacation_time'] = (3*60*60*8.5);
-															echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 
 															}elseif($timeresult>181 && $timeresult<241){
 																$_POST['exvacation_time'] = (4*60*60*8.5);
-															echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 
 															}elseif($timeresult>241 && $timeresult<301){
 																$_POST['exvacation_time'] = (5*60*60*8.5);
-															echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 															}elseif($timeresult>301 && $timeresult<360){
 																$_POST['exvacation_time'] = (6*60*60*8.5);
-															echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 															}else{
 																$_POST['exvacation_time'] = (6*60*60*8.5);
-															echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																$objQuery30 = mysqli_query($objCon,$strSQL30);
 															}
 
@@ -281,33 +290,33 @@ date_default_timezone_set("Asia/Bangkok");
 															if($objResult10['ct0']=="1"){
 																if($timeresult>1 && $timeresult<61){
 																	$_POST['exvacation_time'] = (1*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 																}elseif($timeresult>61 && $timeresult<131){
 																	$_POST['exvacation_time'] = (2*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 																}elseif($timeresult>131 && $timeresult<181){
 																	$_POST['exvacation_time'] = (3*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 
 																}elseif($timeresult>181 && $timeresult<241){
 																	$_POST['exvacation_time'] = (4*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 
 																}elseif($timeresult>241 && $timeresult<301){
 																	$_POST['exvacation_time'] = (5*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 																}elseif($timeresult>301 && $timeresult<360){
 																	$_POST['exvacation_time'] = (6*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 																}else{
 																	$_POST['exvacation_time'] = (6*60*60*8);
-																echo	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
+																	$strSQL30 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',ct0 = '0'";
 																	$objQuery30 = mysqli_query($objCon,$strSQL30);
 																}
 
@@ -332,7 +341,7 @@ date_default_timezone_set("Asia/Bangkok");
 																						if($ct1=="1"){
 																				$_POST['exvacation_time'] =  $objResult10['exvacation_time']+61200;
 																				$_POST['vacation_time'] = $objResult10['vacation_time']+61200;
-																			echo	$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."' where username = '".$_SESSION['username']."'";
+																				$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."' where username = '".$_SESSION['username']."'";
 																				$objQuery11 = mysqli_query($objCon,$strSQL11);
 																				$strSQL21 = "UPDATE member SET ct1 = '0' WHERE username = '".$_SESSION['username']."'";
 																				$objQuery21 = mysqli_query($objCon,$strSQL21);
@@ -341,7 +350,7 @@ date_default_timezone_set("Asia/Bangkok");
 																				if($ct1=="1"){
 																				$_POST['exvacation_time'] = $objResult10['exvacation_time']+57600;
 																				$_POST['vacation_time'] = $objResult10['vacation_time']+57600;
-																			echo	$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."' where username = '".$_SESSION['username']."'";
+																				$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."' where username = '".$_SESSION['username']."'";
 																				$objQuery11 = mysqli_query($objCon,$strSQL11);
 																				$strSQL21 = "UPDATE member SET ct1 = '0' WHERE username = '".$_SESSION['username']."'";
 																				$objQuery21 = mysqli_query($objCon,$strSQL21);
@@ -365,7 +374,7 @@ date_default_timezone_set("Asia/Bangkok");
 																						$vacation_time = $objResult10['vacation_time']+61200;
 																					 $exvacation_time;
 																					 $vacation_time;
-																			echo			 $strSQL11 = "UPDATE member SET exvacation_time = '".$exvacation_time."',vacation_time = '".$vacation_time."',ct2 = '0' where username = '".$_SESSION['username']."'";
+																						 $strSQL11 = "UPDATE member SET exvacation_time = '".$exvacation_time."',vacation_time = '".$vacation_time."',ct2 = '0' where username = '".$_SESSION['username']."'";
 																						$objQuery11 = mysqli_query($objCon,$strSQL11);
 																		}
 																			}else{
@@ -373,7 +382,7 @@ date_default_timezone_set("Asia/Bangkok");
 																					$exvacation_time = $objResult10['exvacation_time']+57600;
 																					$vacation_time = $objResult10['vacation_time']+57600;
 																					 $exvacation_time;
-																			echo		 $strSQL11 = "UPDATE member SET exvacation_time = '".$exvacation_time."',vacation_time = '".$vacation_time."',ct2 = '0' where username = '".$_SESSION['username']."'";
+																					 $strSQL11 = "UPDATE member SET exvacation_time = '".$exvacation_time."',vacation_time = '".$vacation_time."',ct2 = '0' where username = '".$_SESSION['username']."'";
 																					$objQuery11 = mysqli_query($objCon,$strSQL11);
 
 																			}
@@ -394,25 +403,25 @@ date_default_timezone_set("Asia/Bangkok");
 																			if($ct3=="1"){
 																			$_POST['exvacation_time'] =  $objResult10['exvacation_time']+61200;
 																			$_POST['vacation_time'] = $objResult10['vacation_time']+61200;
-																	echo		$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."'  where username = '".$_SESSION['username']."'";
+																			$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."'  where username = '".$_SESSION['username']."'";
 																			$objQuery11 = mysqli_query($objCon,$strSQL11);
-																		echo	$strSQL21 = "UPDATE member SET ct3 = '0' WHERE username = '".$_SESSION['username']."'";
+																			$strSQL21 = "UPDATE member SET ct3 = '0' WHERE username = '".$_SESSION['username']."'";
 																			$objQuery21 = mysqli_query($objCon,$strSQL21);
 																}
 																		}else{
 																			if($ct3=="1"){
 																			$exvacation_time = $objResult10['exvacation_time']+57600;
 																			$vaction_time = $objResult10['vacation_time']+57600;
-																		echo	$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."'  where username = '".$_SESSION['username']."'";
+																			$strSQL11 = "UPDATE member SET exvacation_time = '".$_POST['exvacation_time']."',vacation_time = '".$_POST['vacation_time']."'  where username = '".$_SESSION['username']."'";
 																			$objQuery11 = mysqli_query($objCon,$strSQL11);
-																		echo	$strSQL21 = "UPDATE member SET ct3 = '0' WHERE username = '".$_SESSION['username']."'";
+																			$strSQL21 = "UPDATE member SET ct3 = '0' WHERE username = '".$_SESSION['username']."'";
 																			$objQuery21 = mysqli_query($objCon,$strSQL21);
 																		}
 																		}
 
 																	}
 														}
-
+ 
 	}
 
 	mysqli_close($objCon);
