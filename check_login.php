@@ -97,9 +97,9 @@ date_default_timezone_set("Asia/Bangkok");
 			 if($dateresult2>120 && $dateresult2<365){
 				if($objResult['kind_work']=="office" ){
 				  if($objResult['pr1']='1'){
-				$_POST['exsicktime'] = "918000";
+				
 				$_POST['exbusiness_time'] = "91800";
-				$strSQL25 = "UPDATE member SET exsicktime ='".$_POST['exsicktime']."',exbusiness_time = '".$_POST['exbusiness_time']."' where username = '".$_SESSION['username']."'";
+				$strSQL25 = "UPDATE member SET exbusiness_time = '".$_POST['exbusiness_time']."' where username = '".$_SESSION['username']."'";
 				$objQuery25 = mysqli_query($objCon,$strSQL25);
 				
 				
@@ -109,9 +109,9 @@ date_default_timezone_set("Asia/Bangkok");
 			            }
 			            }else{
 				if($objResult['pr1']=='1'){
-				$_POST['exsicktime'] = "864000";
+				
 				$_POST['exbusiness_time'] = "86400";
-				$strSQL25 = "UPDATE member SET exsicktime ='".$_POST['exsicktime']."',exbusiness_time = '".$_POST['exbusiness_time']."' where username = '".$_SESSION['username']."'";
+				$strSQL25 = "UPDATE member SET exbusiness_time = '".$_POST['exbusiness_time']."' where username = '".$_SESSION['username']."'";
 				$objQuery25 = mysqli_query($objCon,$strSQL25);
 				}
 				
