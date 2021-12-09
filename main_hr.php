@@ -65,6 +65,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
 
           <a class="collapse-item" href="register.php">ลงทะเบียน</a>
+          <a class="collapse-item" href="leave_data_user.php">ลงทะเบียนวันหยุดของผู้อื่น</a>
           <a class="collapse-item" href="holiday.php">ลงทะเบียนวันหยุด</a>
 
         </div>

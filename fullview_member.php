@@ -280,11 +280,47 @@ if($_SESSION['user_id'] == "")
                                                             </select>
 
                                                       </div>
+                                                      <?php
+                                                        $strSQL11 = "SELECT * FROM member where level = 'leader' or level = 'hr'";
+                                                        $objQuery11 = mysqli_query($objCon,$strSQL11);
+                                                       
+                                                       
+                                                      ?>
                                                       <div class="form-group">
-                                                            <input type="text" class="form-control" value="<?php echo $objResult2['leader1'];?>" name="leader1" id="leader1" />
+                                                      <select class="form-control" name = leader1 id=leader1>
+                                                            <option value="<?php echo $objResult2['leader1'];?>"  selected ><?php echo $objResult2['leader1'];?></option>
+                                                            <?php
+                                                                while($objResult11 = mysqli_fetch_assoc($objQuery11)){
+                                                            ?>
+                                                            <option value="<?php echo $objResult11['username']; ?>"><?php echo $objResult11['nameen']; ?> <?php echo $objResult11['surnameen']; ?></option>
+                                                          <?php          
+                                                                }
+
+                                                          ?>
+                                                            
+
+                                                     </select>
                                                         </div>
+                                                        <?php
+                                                        $strSQL12 = "SELECT * FROM member where level = 'leader' or level = 'hr'";
+                                                        $objQuery12 = mysqli_query($objCon,$strSQL12);
+                                                       
+                                                       
+                                                      ?>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" value="<?php echo $objResult2['leader2'];?>" name="leader2" id="leader2" />
+                                                      <select class="form-control" name = leader1 id=leader1>
+                                                            <option value="<?php echo $objResult2['leader1'];?>"  selected ><?php echo $objResult2['leader1'];?></option>
+                                                            <?php
+                                                                while($objResult12 = mysqli_fetch_assoc($objQuery12)){
+                                                            ?>
+                                                            <option value="<?php echo $objResult12['username']; ?>"><?php echo $objResult12['nameen']; ?> <?php echo $objResult12['surnameen']; ?></option>
+                                                          <?php          
+                                                                }
+
+                                                          ?>
+                                                            
+
+                                                     </select>
                                                         </div>
 
                                                 </div>
